@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hboumahd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 11:46:27 by hboumahd          #+#    #+#             */
-/*   Updated: 2021/11/27 11:46:29 by hboumahd         ###   ########.fr       */
+/*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
+/*   Updated: 2022/02/14 15:58:47 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#ifndef SO_LONG_H
 
-# define FT_PRINTF_H
+# define SO_LONG_H
+# include "mlx.h"
+# include "./ft_printf/ft_printf.h"
 
-# include <stdio.h>
-# include <limits.h>
-
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-
-int	ft_printf(const char *str, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr_base(long nbr, char *base);
-int	ft_putnbr_base2(unsigned long nbr, char *base);
-int	ft_putnbr(int n);
-#endif
+#endif 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hboumahd <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/27 14:29:53 by hboumahd          #+#    #+#              #
-#    Updated: 2021/11/27 14:29:57 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/14 20:19:53 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ FLAGS = -Wall -Wextra -Werror
 	${CC} ${FLAGS} -c $< -o $@
 
 $(NAME) : ${SRCOBJ} 
-	ar rcs ${NAME} ${SRCOBJ} 
+	@ar rcs ${NAME} ${SRCOBJ} 
+	@mv ${NAME} ..
 
 all : $(NAME)
 

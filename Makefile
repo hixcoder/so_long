@@ -3,41 +3,50 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hboumahd <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/14 12:20:49 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/14 20:29:09 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 # BONUS= ./bonus
+SRC_FOLDER = ./code/
+FT_PRINTF_FOLDER = ./code/ft_printf
 
-SRC = main.c
+SRC = so_long.c 
 
-SRCOBJ = ${SRC:.c=.o}
-FT_PRINTF = ft_printf
+SRCS = $(addprefix $(SRC_FOLDER), $(SRC))
 
-# INCLUDE2 = so_long.h
+SRCOBJ = ${SRCS:.c=.o}
+LIBFT_PRINTF  = ./code/libftprintf.a
+
+
+INCLUDE1 = ./code/so_long.h
+INCLUDE2 = ./code/ft_printf/ft_printf.h  
 
 CC = cc 
 
 FLAGS = -Wall -Wextra -Werror
 
-%.o : %.c 
-	$(MAKE) -C $(FT_PRINTF)
-	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+%.o : %.c ${INCLUDE1} ${INCLUDE2}
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the libftprintf.a" 
+	
 
 $(NAME) : ${SRCOBJ}
-	$(CC) $(SRCOBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@$(CC) $(SRCOBJ) $(LIBFT_PRINTF) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "make the so_long program"
 
 all : $(NAME)  
 
 clean :
-	@rm -f *.o
+	@rm -f $(LIBFT_PRINTF) ./code/*.o ./code/ft_printf/*.o 
 
 fclean : clean
-	@rm -f ${NAME} 
+	@rm -f ${NAME} so_long
 
 re : fclean all

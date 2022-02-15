@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/15 13:57:25 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/15 16:56:40 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,45 @@ int deal_key(int key, void *param){
 
 int main(){
 
-	s_game obj_game;
+
+	int	fd;
+	char *line;
+
+	
+	fd = open("code/maps/map1.ber", O_RDONLY);
+	while ((line =  get_next_line(fd)))
+		ft_printf("%s", line);
+	close(fd);
+
+
+	
+
+	s_game	obj_game;
+	s_map	obj_map; // here I stopt
+	
+	char	*relative_path = "./assets/coin.xpm";
+	int		img_width = 50;
+	int		img_height = 50;
+	void	*img;
+	int	width = 13;
+	int	height = 5;
+	int i = 0;
+	int j;
 
 	obj_game.mlx_ptr = mlx_init();
-	obj_game.win_ptr = mlx_new_window(obj_game.mlx_ptr, 1000, 500,"hello world");
+	obj_game.win_ptr = mlx_new_window(obj_game.mlx_ptr, width * 50, height * 50,"hello world");
+	img = mlx_xpm_file_to_image(obj_game.mlx_ptr, relative_path, &img_width, &img_height);
+	while(i < width)
+	{
+		j = 0;
+		while(j < height)
+		{
+			mlx_put_image_to_window(obj_game.mlx_ptr, obj_game.win_ptr, img, i * 50, j * 50);
+			j++;
+		}
+		i++;
+	}
 	mlx_key_hook(obj_game.win_ptr, deal_key, &obj_game);
 	mlx_loop(obj_game.mlx_ptr);
 }
+

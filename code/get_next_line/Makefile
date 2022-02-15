@@ -5,24 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/27 14:29:53 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/15 16:04:26 by hboumahd         ###   ########.fr        #
+#    Created: 2022/02/15 15:50:56 by hboumahd          #+#    #+#              #
+#    Updated: 2022/02/15 16:00:38 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = get_next_line.a
 
-SRC = ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putstr.c ft_putnbr_base2.c ft_putnbr.c
+SRC = get_next_line.c get_next_line_utils.c
 
 SRCOBJ = ${SRC:.c=.o}
 
-INCLUDE = ft_printf.h  
+INCLUDE = get_next_line.h  
 
 CC = cc 
 
 FLAGS = -Wall -Wextra -Werror
-
-
 
 %.o : %.c ${INCLUDE}
 	${CC} ${FLAGS} -c $< -o $@

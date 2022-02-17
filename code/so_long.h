@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/17 05:07:04 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:05:12 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ typedef struct s_map
 	int 	P_num;
 } s_map;
 
-typedef struct s_element
+typedef struct s_img
 {
     int     img_width;
     int     img_height;
-    char    *relative_path;
-    void	*img;
-} s_element;
+    // char    *relative_path;
+    // void	*img;
+} s_img;
 
 void    ft_map_dimensions(char *map_path, s_map *obj_map);
 char	**ft_map_init(char *map_path, s_map *obj_map);

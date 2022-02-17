@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/17 01:27:07 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:37:23 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,49 +20,58 @@ int deal_key(int key, void *param){
 	return (0);
 }
 
+void ft_draw_obj(char *relative_path, s_game *obj_game, int i, int j)
+{
+	int		img_width = 50;
+	int		img_height = 50;
+	void	*img;
+
+	img = mlx_xpm_file_to_image(obj_game->mlx_ptr, relative_path, &img_width, &img_height);
+	mlx_put_image_to_window(obj_game->mlx_ptr, obj_game->win_ptr, img, i * 50, j * 50);
+}
+
+void	ft_drawer_game(s_map *obj_map, s_game *obj_game)
+{
+	int i;
+	int j;
+	char **map;
+	
+	i = -1;
+	map = obj_map->map;
+	while(i++ < obj_map->map_width)
+	{
+		j = -1;
+		while(++j < obj_map->map_height)
+		{
+			if(map[i][j] == '1')
+				ft_draw_obj("assets/wall.xpm", obj_game, i, j);
+			else if(map[i][j] == '0')
+				ft_draw_obj("assets/grass.xpm", obj_game, i, j);
+			else if(map[i][j] == 'C')
+				ft_draw_obj("assets/coin.xpm", obj_game, i, j);
+			else if(map[i][j] == 'P')
+				ft_draw_obj("assets/player.xpm", obj_game, i, j);
+			else if(map[i][j] == 'E')
+				ft_draw_obj("assets/dors_close.xpm", obj_game, i, j);
+		}
+	}
+}
+
 int main(int ac, char **av)
 {
-
-	if (ac == 2){
+	if (ac == 2)
+	{
 		
 		s_game	obj_game;
 		s_map	obj_map;
-		int i;
-		int j;
-		
-		char	*relative_path = "./assets/player.xpm";
-		int		img_width = 50;
-		int		img_height = 50;
-		void	*img;
-		
-		
 		
 		ft_map_dimensions(av[1], &obj_map);
-		ft_printf("width = %d, height = %d\n", obj_map.map_width, obj_map.map_height);
 		obj_map.map = ft_map_init(av[1], &obj_map);
-		for (int i1 = 0; i1 < obj_map.map_height; i1++)
-		{
-			ft_printf("%s", obj_map.map[i1]);
-		}
 		ft_map_checker(&obj_map);
-		
-		
 		
 		obj_game.mlx_ptr = mlx_init();
 		obj_game.win_ptr = mlx_new_window(obj_game.mlx_ptr, obj_map.map_width * 50, obj_map.map_height * 50,"hello world");
-		img = mlx_xpm_file_to_image(obj_game.mlx_ptr, relative_path, &img_width, &img_height);
-
-		i = 0;
-		while(i < obj_map.map_width)
-		{
-			j = 0;
-			while(j < obj_map.map_height)
-			{
-				mlx_put_image_to_window(obj_game.mlx_ptr, obj_game.win_ptr, img, i * 50, j * 50);
-				j++;
-			}
-			i++;
-		}
+		ft_drawer_game(&obj_map, &obj_game);
 		mlx_key_hook(obj_game.win_ptr, deal_key, &obj_game);
 		
 		mlx_loop(obj_game.mlx_ptr);

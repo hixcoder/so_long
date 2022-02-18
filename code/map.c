@@ -6,11 +6,25 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:58:25 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/17 05:33:12 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/17 20:19:30 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_check_map_type(char *map_path)
+{
+	int		map_path_ending;
+	char	*ending;
+	
+	map_path_ending = ft_strlen(map_path) - 4;
+	ending = ".ber";
+	if (ft_strncmp(ending, &map_path[map_path_ending],4) != 0)
+	{
+		printf("==> Error: The map must end with the [.ber] extension.\n");
+		exit(0);
+	}
+}
 
 /*
 * this function calculate the map width and height
@@ -43,6 +57,8 @@ char	**ft_map_init(char *map_path, s_map *obj_map)
 	char	*line;
 	char	**map;
 	
+	ft_check_map_type(map_path);
+	ft_map_dimensions(map_path, obj_map);
 	map = malloc(obj_map->map_width * obj_map->map_height);
 	if (!map)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/17 06:05:12 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/18 01:16:39 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,32 @@
 
 typedef struct s_game
 {
-    void	*mlx_ptr;
-    void	*win_ptr;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	s_map	*obj_map;
+	s_img 	*obj_img;
 } s_game;
 
 typedef struct s_map
 {
-    char    **map;
-    int     map_width;
-    int     map_height;
-	int	    E_num;
-	int	    C_num;
-	int 	P_num;
-} s_map;
+	char	**map;
+	int		map_width;
+	int		map_height;
+	int		exit_num;
+	int		coin_num;
+	int		plyr_num;
+	int		plyr_x;
+	int		plyr_y;
+}	s_map;
 
 typedef struct s_img
 {
-    int     img_width;
-    int     img_height;
-    // char    *relative_path;
-    // void	*img;
+	int     img_size;
+	void	*img_player;
+	void	*img_coin;
+	void	*img_grass;
+	void	*img_dors_close;
+	void	*img_wall;
 } s_img;
 
 void    ft_map_dimensions(char *map_path, s_map *obj_map);

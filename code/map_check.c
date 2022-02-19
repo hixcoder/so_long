@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 04:12:54 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/18 00:57:09 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:17:02 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ void ft_check_is_rectangle(s_map *obj_map)
 
 void ft_map_chars_num(s_map *obj_map, char map_c, int i, int j)
 {
-    if (map_c == 'E')
+    if(map_c == '0' || map_c == '1')
+		return ;
+	if (map_c == 'E')
 		obj_map->exit_num++;
 	else if (map_c == 'C')
 		obj_map->coin_num++;
@@ -78,7 +80,6 @@ void ft_map_chars_num(s_map *obj_map, char map_c, int i, int j)
 	}	
 }
 
-
 /*
 * this function for check if the map valid or not
 */
@@ -87,8 +88,7 @@ void ft_map_checker(s_map *obj_map)
 	int	i;
 	int	j;
 	char    **map;
-
-    // ft_check_is_rectangle(obj_map);
+    ft_check_is_rectangle(obj_map);
 	map = obj_map->map;
 	i = -1;
 	obj_map->exit_num = 0;
@@ -106,7 +106,7 @@ void ft_map_checker(s_map *obj_map)
 		}
 	}
 	if (obj_map->exit_num <= 0 || obj_map->coin_num <= 0 || 
-    (obj_map->plyr_num <= 0 || obj_map->plyr_num > 1))
+    (obj_map->plyr_num != 1))
 		ft_map_errors(2);
     ft_check_walls(obj_map);	
 }

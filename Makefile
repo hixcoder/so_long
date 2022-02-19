@@ -6,7 +6,7 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/17 05:13:35 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/19 16:28:02 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ INCLUDE4 = ./code/libft/libft.h
 
 CC = cc 
 
-FLAGS = -Wall -Wextra -Werror
+# -g for the debugger
+FLAGS = -Wall -Wextra -Werror -g
 
 %.o : %.c ${INCLUDE1} ${INCLUDE2} ${INCLUDE3} ${INCLUDE4}
 	@$(MAKE) -C $(FT_PRINTF_FOLDER)

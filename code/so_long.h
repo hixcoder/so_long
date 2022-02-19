@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/18 01:16:39 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/19 14:24:32 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,6 @@
 #define KEY_Q	12
 #define KEY_E	14
 #define KEY_R	15
-
-typedef struct s_game
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	s_map	*obj_map;
-	s_img 	*obj_img;
-} s_game;
 
 typedef struct s_map
 {
@@ -57,6 +49,14 @@ typedef struct s_img
 	void	*img_dors_close;
 	void	*img_wall;
 } s_img;
+
+typedef struct s_game
+{
+	void	*mlx_ptr;
+	void	*win_ptr;
+	s_map	*obj_map;
+	s_img 	*obj_img;
+} s_game;
 
 void    ft_map_dimensions(char *map_path, s_map *obj_map);
 char	**ft_map_init(char *map_path, s_map *obj_map);

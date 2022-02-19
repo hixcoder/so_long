@@ -1,0 +1,470 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Sat Feb 19 20:57:27 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 33)
+INCLUDE3 = ./code/get_next_line/get_next_line.h 
+# makefile (from `Makefile', line 20)
+SRC = so_long.c map.c map_check.c move.c draw.c
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/hboumahd/Desktop/so_long
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 18)
+LIBFT_FOLDER = ./code/libft
+# makefile (from `Makefile', line 32)
+INCLUDE2 = ./code/ft_printf/ft_printf.h  
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cdf80033bk/T/vscode-ipc-4466cce6-8120-446a-885b-304db806f3db.sock
+# environment
+VSCODE_CWD = /
+# environment
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.ldT8d8cfn6/Render
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/hboumahd/goinfre/devtools/Android/sdk/tools/bin:/Users/hboumahd/goinfre/devtools/Android/sdk/emulator:/Users/hboumahd/goinfre/devtools/flutter/bin:/Users/hboumahd/goinfre/devtools/gradle/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/hboumahd/goinfre/devtools/jdk/Contents/Home/bin
+ 
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `Makefile', line 24)
+SRCOBJ = ${SRCS:.c=.o}
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.wi9UdhJCXD/Listeners
+# automatic
+%F = $(notdir $%)
+# makefile (from `Makefile', line 17)
+GET_NEXT_LINE_FOLDER = ./code/get_next_line
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/hboumahd/Desktop/so_long
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /Users/hboumahd
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/hboumahd/Library/Application Support/Code/CachedData/ccbaa2d27e38e5afa3e5c21c1c7bef4657064247
+# environment
+LOGNAME = hboumahd
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+GRADLE_USER_HOME = /Users/hboumahd/goinfre/devtools/gradle
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from `Makefile', line 15)
+SRC_FOLDER = ./code/
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 34)
+INCLUDE4 = ./code/libft/libft.h 
+# makefile (from `Makefile', line 16)
+FT_PRINTF_FOLDER = ./code/ft_printf
+# makefile (from `Makefile', line 22)
+SRCS = $(addprefix $(SRC_FOLDER), $(SRC))
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 28)
+LIBFT = ./code/libft.a
+# makefile (from `Makefile', line 36)
+CC = cc 
+# environment
+DEV_TOOLS = /Users/hboumahd/goinfre/devtools
+# environment
+JAVA_HOME = /Users/hboumahd/goinfre/devtools/jdk/Contents/Home
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = hboumahd
+# makefile
+.DEFAULT_GOAL := so_long
+# makefile (from `Makefile', line 31)
+INCLUDE1 = ./code/so_long.h
+# makefile (from `Makefile', line 13)
+NAME = so_long
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cdf80033bk/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/hboumahd/Library/Application Support/Code/1.62.3-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.1276
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x18D72:0:0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+APPS = /Users/hboumahd/goinfre/apps
+# makefile (from `Makefile', line 26)
+PRINTF = ./code/printf.a
+# environment
+ANDROID_SDK_ROOT = /Users/hboumahd/goinfre/devtools/Android/sdk
+# environment
+LC_ALL = C
+# makefile (from `Makefile', line 27)
+GET_NEXT_LINE = ./code/get_next_line.a
+# automatic
+^F = $(notdir $^)
+# environment
+GRADLE_OPTS = -Dgradle.user.home=/Users/hboumahd/goinfre/devtools/gradle
+# default
+SUFFIXES := 
+# environment
+JAVA_17_HOME = /Users/hboumahd/goinfre/devtools/jdk/Contents/Home
+# makefile (from `Makefile', line 39)
+FLAGS = -Wall -Wextra -Werror 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 41901
+# variable set hash-table stats:
+# Load=85/1024=8%, Rehash=0, Collisions=4/119=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777227, inode 1792472): 9 files, no impossibilities.
+# code/libft (device 16777227, inode 1824435): 79 files, no impossibilities so far.
+# code/get_next_line (device 16777227, inode 1816969): 4 files, no impossibilities so far.
+# code (device 16777227, inode 1795994): 19 files, no impossibilities so far.
+# code/ft_printf (device 16777227, inode 1792652): 4 files, no impossibilities so far.
+
+# 115 files, no impossibilities in 5 directories.
+
+# Implicit Rules
+
+%.o: %.c ./code/so_long.h ./code/ft_printf/ft_printf.h   ./code/get_next_line/get_next_line.h  ./code/libft/libft.h
+#  commands to execute (from `Makefile', line 42):
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
+	@$(MAKE) -C $(LIBFT_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the printf.a" 
+	@echo "make the get_next_line.a"
+	@echo "make the libft.a"
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+code/so_long.o: code/so_long.c code/so_long.h code/ft_printf/ft_printf.h code/get_next_line/get_next_line.h code/libft/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `code/so_long'
+#  Last modified 2022-02-19 20:56:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 42):
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
+	@$(MAKE) -C $(LIBFT_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the printf.a" 
+	@echo "make the get_next_line.a"
+	@echo "make the libft.a"
+	
+
+all: so_long
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+code/map_check.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 16:17:02
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+code/map.o: code/map.c code/so_long.h code/ft_printf/ft_printf.h code/get_next_line/get_next_line.h code/libft/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `code/map'
+#  Last modified 2022-02-19 20:56:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 42):
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
+	@$(MAKE) -C $(LIBFT_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the printf.a" 
+	@echo "make the get_next_line.a"
+	@echo "make the libft.a"
+	
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 20:57:10
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+code/so_long.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 20:54:52
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+code/draw.o: code/draw.c code/so_long.h code/ft_printf/ft_printf.h code/get_next_line/get_next_line.h code/libft/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `code/draw'
+#  Last modified 2022-02-19 20:57:12
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 42):
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
+	@$(MAKE) -C $(LIBFT_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the printf.a" 
+ 
+	@echo "make the get_next_line.a"
+	@echo "make the libft.a"
+	
+
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 61):
+	@rm -f ${NAME} so_long
+	
+
+# Not a target:
+code/ft_printf/ft_printf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-14 20:23:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+code/so_long.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 20:54:45
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+code/move.o: code/move.c code/so_long.h code/ft_printf/ft_printf.h code/get_next_line/get_next_line.h code/libft/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `code/move'
+#  Last modified 2022-02-19 20:56:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 42):
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
+	@$(MAKE) -C $(LIBFT_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the printf.a" 
+	@echo "make the get_next_line.a"
+	@echo "make the libft.a"
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+code/map.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 16:20:20
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 58):
+	@rm -f ./code/*.a ./code/*.o ./code/ft_printf/*.o ./code/get_next_line/*.o ./code/libft/*.o
+	
+
+# Not a target:
+code/libft/libft.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-16 19:03:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+code/draw.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 20:54:35
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+code/get_next_line/get_next_line.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-15 15:45:46
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+code/map_check.o: code/map_check.c code/so_long.h code/ft_printf/ft_printf.h code/get_next_line/get_next_line.h code/libft/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `code/map_check'
+#  Last modified 2022-02-19 20:56:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 42):
+	@$(MAKE) -C $(FT_PRINTF_FOLDER)
+	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
+	@$(MAKE) -C $(LIBFT_FOLDER)
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the printf.a" 
+	@echo "make the get_next_line.a"
+	@echo "make the libft.a"
+	
+
+so_long: code/so_long.o code/map.o code/map_check.o code/move.o code/draw.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-02-19 20:57:12
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 52):
+	@$(CC) $(SRCOBJ) $(PRINTF) $(GET_NEXT_LINE) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "make the so_long program"
+	
+
+# Not a target:
+code/move.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 20:50:51
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# files hash-table stats:
+# Load=22/1024=2%, Rehash=0, Collisions=0/99=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Sat Feb 19 20:57:27 2022
+
+ 

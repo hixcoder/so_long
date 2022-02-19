@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/19 19:48:40 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:58:38 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_img
 	void	*img_coin;
 	void	*img_grass;
 	void	*img_dors_close;
+	void	*img_dors_open;
 	void	*img_wall;
 } s_img;
 
@@ -66,5 +67,7 @@ void    ft_move_up(s_game *obj_game);
 void    ft_move_down(s_game *obj_game);
 void    ft_move_right(s_game *obj_game);
 void    ft_move_left(s_game *obj_game);
+void	ft_drawer_init(s_game *obj_game, s_img *obj_img);
+void	ft_game_drawer(s_map *obj_map, s_game *obj_game, s_img *obj_img);
 
 #endif 

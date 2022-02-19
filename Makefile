@@ -6,7 +6,7 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/19 20:14:51 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/19 20:57:10 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FT_PRINTF_FOLDER = ./code/ft_printf
 GET_NEXT_LINE_FOLDER = ./code/get_next_line
 LIBFT_FOLDER = ./code/libft
 
-SRC = so_long.c map.c map_check.c move.c
+SRC = so_long.c map.c map_check.c move.c draw.c
 
 SRCS = $(addprefix $(SRC_FOLDER), $(SRC))
 

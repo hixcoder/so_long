@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 00:42:59 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/19 20:13:22 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:50:51 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ void    ft_move_left(s_game *obj_game)
 	x = obj_game->obj_map->plyr_x;
 	y = obj_game->obj_map->plyr_y;
 	if (map[y][x - 1] != '1' && map[y][x - 1] != 'E')
+	{
+		map[y][x] = '0';
+		map[y][x - 1] = 'P';
+		obj_game->obj_map->plyr_x--;
+		obj_game->move_num++;
+		ft_printf("==> Number of movements : %d\n", obj_game->move_num);
+	}
+	else if (map[y][x - 1] != 'E' && obj_game->obj_map->coin_num == 0)
 	{
 		map[y][x] = '0';
 		map[y][x - 1] = 'P';

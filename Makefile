@@ -6,7 +6,7 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/19 16:28:02 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/19 20:14:51 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FT_PRINTF_FOLDER = ./code/ft_printf
 GET_NEXT_LINE_FOLDER = ./code/get_next_line
 LIBFT_FOLDER = ./code/libft
 
-SRC = so_long.c map.c map_check.c 
+SRC = so_long.c map.c map_check.c move.c
 
 SRCS = $(addprefix $(SRC_FOLDER), $(SRC))
 
@@ -36,7 +36,7 @@ INCLUDE4 = ./code/libft/libft.h
 CC = cc 
 
 # -g for the debugger
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror 
 
 %.o : %.c ${INCLUDE1} ${INCLUDE2} ${INCLUDE3} ${INCLUDE4}
 	@$(MAKE) -C $(FT_PRINTF_FOLDER)

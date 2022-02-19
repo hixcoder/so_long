@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/19 14:24:32 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/19 19:48:40 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,15 @@ typedef struct s_game
 	void	*win_ptr;
 	s_map	*obj_map;
 	s_img 	*obj_img;
+	int		move_num;
 } s_game;
 
 void    ft_map_dimensions(char *map_path, s_map *obj_map);
 char	**ft_map_init(char *map_path, s_map *obj_map);
 void    ft_map_checker(s_map *obj_map);
+void    ft_move_up(s_game *obj_game);
+void    ft_move_down(s_game *obj_game);
+void    ft_move_right(s_game *obj_game);
+void    ft_move_left(s_game *obj_game);
 
 #endif 

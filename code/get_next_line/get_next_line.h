@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:16:51 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/15 15:45:46 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/20 10:30:51 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 #define BUFFER_SIZE 5
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *s1);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen2(const char *str);
+char	*ft_strjoin2(char const *s1, char const *s2);
+char	*ft_strdup2(const char *s1);
+char	*ft_substr2(char const *s, unsigned int start, size_t len);
 #endif

@@ -6,7 +6,7 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/19 20:57:10 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/20 13:14:07 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,10 @@ SRC = so_long.c map.c map_check.c move.c draw.c
 SRCS = $(addprefix $(SRC_FOLDER), $(SRC))
 
 SRCOBJ = ${SRCS:.c=.o}
+
+OTHER_FOLDER = ./code/**/
+OTHERS = *.c
+OTHEROBJ = $(addprefix $(OTHER_FOLDER), $(OTHERS))
 
 PRINTF  = ./code/printf.a
 GET_NEXT_LINE = ./code/get_next_line.a
@@ -39,18 +43,17 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror 
 
 %.o : %.c ${INCLUDE1} ${INCLUDE2} ${INCLUDE3} ${INCLUDE4}
+	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	
+$(NAME) : ${SRCOBJ} $(OTHEROBJ)
 	@$(MAKE) -C $(FT_PRINTF_FOLDER)
 	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
 	@$(MAKE) -C $(LIBFT_FOLDER)
-	$(CC) ${FLAGS} -Imlx -c $< -o $@
+	@echo "make the so_long program"
 	@echo "make the printf.a" 
 	@echo "make the get_next_line.a"
 	@echo "make the libft.a"
-	
-
-$(NAME) : ${SRCOBJ}
 	@$(CC) $(SRCOBJ) $(PRINTF) $(GET_NEXT_LINE) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-	@echo "make the so_long program"
 
 all : $(NAME)  
 

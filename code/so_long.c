@@ -6,13 +6,13 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/19 21:09:16 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/20 13:26:08 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int deal_key(int key, void *obj_gam){
+int ft_key_handler(int key, void *obj_gam){
 	s_game	*obj_game;
 	char	**map;
 	
@@ -32,9 +32,18 @@ int deal_key(int key, void *obj_gam){
 		ft_move_right(obj_game);
 	
 	ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
-	
-	
 	return (0);
+}
+
+int ft_exit_handler(void *obj_gam){
+	s_game	*obj_game;
+	
+	obj_game = obj_gam;
+	free(obj_game->obj_map->map);
+	obj_game->obj_map->map = NULL;
+	
+	mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
+	exit(0);
 }
 
 int main(int ac, char **av)
@@ -58,7 +67,8 @@ int main(int ac, char **av)
 		ft_drawer_init(&obj_game, &obj_img);
 		ft_game_drawer(&obj_map, &obj_game, &obj_img);
 		
-		mlx_key_hook(obj_game.win_ptr, deal_key, &obj_game);
+		mlx_hook(obj_game.win_ptr, 02, 0, ft_key_handler, &obj_game);
+		mlx_hook(obj_game.win_ptr, 17, 0, ft_exit_handler, &obj_game);
 		mlx_loop(obj_game.mlx_ptr);
 	}
 	else

@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hboumahd <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 07:56:02 by hboumahd          #+#    #+#             */
-/*   Updated: 2021/11/18 16:44:57 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/20 11:57:34 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen2(const char *str)
 {
-	size_t	i;
-
+	size_t	i; 
+ 
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
-
-char	*ft_strjoin(char const *s1, char const *s2)
+ 
+char	*ft_strjoin2(char const *s1, char const *s2)
 {
 	char	*dst;
 	int		len;
@@ -31,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	len = (int)ft_strlen(s1) + (int)ft_strlen(s2) + 1;
+	len = (int)ft_strlen2(s1) + (int)ft_strlen2(s2) + 1;
 	dst = malloc(sizeof(char) * len);
 	if (dst == NULL)
 		return (NULL);
@@ -45,14 +45,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dst);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup2(const char *s1)
 {
 	int		i;
 	char	*pdst;
 	int		s1len;
 
 	i = 0;
-	s1len = (int)ft_strlen(s1);
+	s1len = (int)ft_strlen2(s1);
 	pdst = malloc(sizeof(char) * (s1len + 1));
 	if (pdst == NULL)
 		return (NULL);
@@ -65,7 +65,7 @@ char	*ft_strdup(const char *s1)
 	return (pdst);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr2(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	slen;
@@ -76,7 +76,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = 0;
 	sublen = 0;
-	slen = (size_t)ft_strlen((char *)s);
+	slen = (size_t)ft_strlen2((char *)s);
 	while (slen > start && i < len && i < slen)
 	{
 		i++;

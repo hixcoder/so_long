@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 20:53:04 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/19 21:07:45 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/20 10:20:46 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,6 @@ void	ft_drawer_init(s_game *obj_game, s_img *obj_img)
 	obj_img->img_dors_close = mlx_xpm_file_to_image(obj_game->mlx_ptr, "./assets/dors_close.xpm", &obj_img->img_size, &obj_img->img_size);
     obj_img->img_dors_open = mlx_xpm_file_to_image(obj_game->mlx_ptr, "./assets/dors_open.xpm", &obj_img->img_size, &obj_img->img_size);
 		
-}
-
-void	ft_draw_dors(s_game *obj_game, s_img *obj_img)
-{
-    int i;
-	int j;
-    
-    i = obj_game->obj_map->plyr_y;
-    j = obj_game->obj_map->plyr_x;
-    if (obj_game->obj_map->coin_num == 0)
-        mlx_put_image_to_window(obj_game->mlx_ptr, obj_game->win_ptr, obj_img->img_dors_open, j * 50, i * 50);
-    else
-        mlx_put_image_to_window(obj_game->mlx_ptr, obj_game->win_ptr, obj_img->img_dors_close, j * 50, i * 50);
 }
 
 void	ft_game_drawer(s_map *obj_map, s_game *obj_game, s_img *obj_img)
@@ -60,7 +47,7 @@ void	ft_game_drawer(s_map *obj_map, s_game *obj_game, s_img *obj_img)
 			else if (obj_map->map[i][j] == 'P')
 				mlx_put_image_to_window(obj_game->mlx_ptr, obj_game->win_ptr, obj_img->img_player, j * 50, i * 50);
 			else if (obj_map->map[i][j] == 'E')
-                ft_draw_dors(obj_game, obj_img);
+                mlx_put_image_to_window(obj_game->mlx_ptr, obj_game->win_ptr, obj_img->img_dors_open, j * 50, i * 50);
 		}
 	}
 }

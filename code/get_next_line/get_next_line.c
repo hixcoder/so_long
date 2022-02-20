@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hboumahd <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:15:48 by hboumahd          #+#    #+#             */
-/*   Updated: 2021/11/21 09:53:42 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/20 13:13:00 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static char	*ft_read(int fd, char *buffer, char *saved_str)
 			break ;
 		buffer[readed_bytes] = '\0';
 		if (saved_str == NULL)
-			saved_str = ft_strdup("");
+			saved_str = ft_strdup2("");
 		temp = saved_str;
-		saved_str = ft_strjoin(temp, buffer);
+		saved_str = ft_strjoin2(temp, buffer);
 		free(temp);
 		temp = NULL;
 		if (ft_check_buff(buffer) == 1)
@@ -58,12 +58,12 @@ static char	*ft_read_one_line(char *line)
 	size_t	line_len;
 
 	i = 0;
-	line_len = ft_strlen(line);
+	line_len = ft_strlen2(line);
 	while (line[i] != '\n' && line[i] != '\0')
 		i++;
 	if (line[i] == '\0')
 		return (NULL);
-	remain_str = ft_substr(line, (i + 1), (line_len - i));
+	remain_str = ft_substr2(line, (i + 1), (line_len - i));
 	if (remain_str[0] == '\0')
 	{
 		free(remain_str);
@@ -92,3 +92,4 @@ char	*get_next_line(int fd)
 	saved_str = ft_read_one_line(line);
 	return (line);
 }
+ 

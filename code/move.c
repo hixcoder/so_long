@@ -6,13 +6,13 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 00:42:59 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/21 13:49:14 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:12:36 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_check_exit(s_game *obj_game)
+void	ft_check_exit(t_game *obj_game)
 {
 	if (obj_game->obj_map->coin_num == 0)
 	{
@@ -21,10 +21,10 @@ void	ft_check_exit(s_game *obj_game)
 		exit(0);
 	}
 	else
-		return;
+		return ;
 }
 
-void    ft_move_up(s_game *obj_game)
+void	ft_move_up(t_game *obj_game)
 {
 	char	**map;
 	int		x;
@@ -50,7 +50,7 @@ void    ft_move_up(s_game *obj_game)
 	}
 }
 
-void    ft_move_down(s_game *obj_game)
+void	ft_move_down(t_game *obj_game)
 {
 	char	**map;
 	int		x;
@@ -76,7 +76,7 @@ void    ft_move_down(s_game *obj_game)
 	}
 }
 
-void    ft_move_right(s_game *obj_game)
+void	ft_move_right(t_game *obj_game)
 {
 	char	**map;
 	int		x;
@@ -102,7 +102,7 @@ void    ft_move_right(s_game *obj_game)
 	}
 }
 
-void    ft_move_left(s_game *obj_game)
+void	ft_move_left(t_game *obj_game)
 {
 	char	**map;
 	int		x;
@@ -127,4 +127,3 @@ void    ft_move_left(s_game *obj_game)
 		}
 	}
 }
-

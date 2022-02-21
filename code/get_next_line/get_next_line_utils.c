@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 07:56:02 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/21 13:03:26 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:35:18 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 size_t	ft_strlen2(const char *str)
 {
-	size_t	i; 
- 
+	size_t	i;
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
- 
+
 char	*ft_strjoin2(char const *s1, char const *s2)
 {
 	char	*dst;

@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:16:51 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/20 10:30:51 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:34:56 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-#define BUFFER_SIZE 5
+# define BUFFER_SIZE 5
 
 char	*get_next_line(int fd);
 size_t	ft_strlen2(const char *str);

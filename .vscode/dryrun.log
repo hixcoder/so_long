@@ -1,6 +1,78 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/hboumahd/Desktop/so_long'
-make: `so_long' is up to date.
+cc  -Wall -Wextra -Werror  -Imlx -c code/so_long.c -o code/so_long.o
  
+cc  -Wall -Wextra -Werror  -Imlx -c code/map.c -o code/map.o
+cc  -Wall -Wextra -Werror  -Imlx -c code/map_check.c -o code/map_check.o
+cc  -Wall -Wextra -Werror  -Imlx -c code/move.c -o code/move.o
+cc  -Wall -Wextra -Werror  -Imlx -c code/draw.c -o code/draw.o
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ./code/ft_printf
+ 
+make[1]: Entering directory `/Users/hboumahd/Desktop/so_long/code/ft_printf'
+cc  -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
+cc  -Wall -Wextra -Werror -c ft_putchar.c -o ft_putchar.o
+cc  -Wall -Wextra -Werror -c ft_putnbr_base.c -o ft_putnbr_base.o
+cc  -Wall -Wextra -Werror -c ft_putstr.c -o ft_putstr.o
+cc  -Wall -Wextra -Werror -c ft_putnbr_base2.c -o ft_putnbr_base2.o
+cc  -Wall -Wextra -Werror -c ft_putnbr.c -o ft_putnbr.o
+ar rcs printf.a ft_printf.o ft_putchar.o ft_putnbr_base.o ft_putstr.o ft_putnbr_base2.o ft_putnbr.o 
+mv printf.a ..
+make[1]: Leaving directory `/Users/hboumahd/Desktop/so_long/code/ft_printf'
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ./code/get_next_line
+ 
+make[1]: Entering directory `/Users/hboumahd/Desktop/so_long/code/get_next_line'
+cc  -Wall -Wextra -Werror -c get_next_line.c -o get_next_line.o
+cc  -Wall -Wextra -Werror -c get_next_line_utils.c -o get_next_line_utils.o
+ar rcs get_next_line.a get_next_line.o get_next_line_utils.o 
+mv get_next_line.a ..
+make[1]: Leaving directory `/Users/hboumahd/Desktop/so_long/code/get_next_line'
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ./code/libft
+ 
+make[1]: Entering directory `/Users/hboumahd/Desktop/so_long/code/libft'
+cc -Wall -Wextra -Werror -g -c ft_isdigit.c -o ft_isdigit.o
+cc -Wall -Wextra -Werror -g -c ft_memset.c -o ft_memset.o
+cc -Wall -Wextra -Werror -g -c ft_strjoin.c -o ft_strjoin.o
+cc -Wall -Wextra -Werror -g -c ft_strtrim.c -o ft_strtrim.o
+cc -Wall -Wextra -Werror -g -c ft_isprint.c -o ft_isprint.o
+cc -Wall -Wextra -Werror -g -c ft_putchar_fd.c -o ft_putchar_fd.o
+cc -Wall -Wextra -Werror -g -c ft_strlcat.c -o ft_strlcat.o
+cc -Wall -Wextra -Werror -g -c ft_substr.c -o ft_substr.o
+cc -Wall -Wextra -Werror -g -c ft_itoa.c -o ft_itoa.o
+cc -Wall -Wextra -Werror -g -c ft_atoi.c -o ft_atoi.o
+cc -Wall -Wextra -Werror -g -c ft_putendl_fd.c -o ft_putendl_fd.o
+cc -Wall -Wextra -Werror -g -c ft_strlcpy.c -o ft_strlcpy.o
+cc -Wall -Wextra -Werror -g -c ft_tolower.c -o ft_tolower.o
+cc -Wall -Wextra -Werror -g -c ft_bzero.c -o ft_bzero.o
+cc -Wall -Wextra -Werror -g -c ft_putnbr_fd.c -o ft_putnbr_fd.o
+cc -Wall -Wextra -Werror -g -c ft_strlen.c -o ft_strlen.o
+cc -Wall -Wextra -Werror -g -c ft_toupper.c -o ft_toupper.o
+cc -Wall -Wextra -Werror -g -c ft_calloc.c -o ft_calloc.o
+cc -Wall -Wextra -Werror -g -c ft_memchr.c -o ft_memchr.o
+cc -Wall -Wextra -Werror -g -c ft_putstr_fd.c -o ft_putstr_fd.o
+cc -Wall -Wextra -Werror -g -c ft_strmapi.c -o ft_strmapi.o
+cc -Wall -Wextra -Werror -g -c ft_isalnum.c -o ft_isalnum.o
+cc -Wall -Wextra -Werror -g -c ft_memcmp.c -o ft_memcmp.o
+cc -Wall -Wextra -Werror -g -c ft_split.c -o ft_split.o
+cc -Wall -Wextra -Werror -g -c ft_strncmp.c -o ft_strncmp.o
+cc -Wall -Wextra -Werror -g -c ft_isalpha.c -o ft_isalpha.o
+cc -Wall -Wextra -Werror -g -c ft_memcpy.c -o ft_memcpy.o
+cc -Wall -Wextra -Werror -g -c ft_strchr.c -o ft_strchr.o
+cc -Wall -Wextra -Werror -g -c ft_strnstr.c -o ft_strnstr.o
+cc -Wall -Wextra -Werror -g -c ft_isascii.c -o ft_isascii.o
+cc -Wall -Wextra -Werror -g -c ft_memmove.c -o ft_memmove.o
+cc -Wall -Wextra -Werror -g -c ft_strdup.c -o ft_strdup.o
+cc -Wall -Wextra -Werror -g -c ft_strrchr.c -o ft_strrchr.o
+cc -Wall -Wextra -Werror -g -c ft_striteri.c -o ft_striteri.o
+ar rcs libft.a ft_isdigit.o ft_memset.o ft_strjoin.o ft_strtrim.o ft_isprint.o ft_putchar_fd.o ft_strlcat.o ft_substr.o ft_itoa.o ft_atoi.o ft_putendl_fd.o ft_strlcpy.o ft_tolower.o ft_bzero.o ft_putnbr_fd.o ft_strlen.o ft_toupper.o ft_calloc.o ft_memchr.o ft_putstr_fd.o ft_strmapi.o ft_isalnum.o ft_memcmp.o ft_split.o ft_strncmp.o ft_isalpha.o ft_memcpy.o ft_strchr.o ft_strnstr.o ft_isascii.o ft_memmove.o ft_strdup.o ft_strrchr.o ft_striteri.o
+mv libft.a ..
+make[1]: Leaving directory `/Users/hboumahd/Desktop/so_long/code/libft'
+ 
+echo "make the so_long program"
+echo "make the printf.a" 
+echo "make the get_next_line.a"
+echo "make the libft.a"
+cc  ./code/so_long.o ./code/map.o ./code/map_check.o ./code/move.o ./code/draw.o ./code/printf.a ./code/get_next_line.a ./code/libft.a -lmlx -framework OpenGL -framework AppKit -o so_long
 make: Leaving directory `/Users/hboumahd/Desktop/so_long'
  

@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/20 13:26:08 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/21 13:50:10 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int main(int ac, char **av)
 		
 		obj_map.map = ft_map_init(av[1], &obj_map);
 		ft_map_checker(&obj_map);
-		printf("coin num: %d\n", obj_map.coin_num);
 		obj_game.move_num = 0;
 
 		obj_game.obj_map = &obj_map;

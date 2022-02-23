@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:58:45 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/21 15:13:29 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:55:34 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,4 @@ void	ft_move_left(t_game *obj_game);
 void	ft_drawer_init(t_game *obj_game, t_img *obj_img);
 void	ft_game_drawer(t_map *obj_map, t_game *obj_game, t_img *obj_img);
 
-#endif 
+#endif

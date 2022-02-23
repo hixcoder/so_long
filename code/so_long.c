@@ -6,11 +6,22 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/21 15:33:37 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:39:52 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	ft_exit_handler(void *obj_gam)
+{
+	t_game	*obj_game;
+
+	obj_game = obj_gam;
+	free(obj_game->obj_map->map);
+	obj_game->obj_map->map = NULL;
+	mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
+	exit(0);
+}
 
 int	ft_key_handler(int key, void *obj_gam)
 {
@@ -21,7 +32,7 @@ int	ft_key_handler(int key, void *obj_gam)
 	map = obj_game->obj_map->map;
 	mlx_clear_window(obj_game->mlx_ptr, obj_game->win_ptr);
 	if (key == KEY_ESC)
-		exit(0);
+		ft_exit_handler(obj_gam);
 	else if (key == KEY_W)
 		ft_move_up(obj_game);
 	else if (key == KEY_S)
@@ -34,15 +45,12 @@ int	ft_key_handler(int key, void *obj_gam)
 	return (0);
 }
 
-int	ft_exit_handler(void *obj_gam)
+void	ft_init_obj_game(t_game *obj_game, t_map *obj_map, t_img *obj_img)
 {
-	t_game	*obj_game;
-
-	obj_game = obj_gam;
-	free(obj_game->obj_map->map);
-	obj_game->obj_map->map = NULL;
-	mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
-	exit(0);
+	obj_game->move_num = 0;
+	obj_game->obj_map = obj_map;
+	obj_game->obj_img = obj_img;
+	obj_game->mlx_ptr = mlx_init();
 }
 
 int	main(int ac, char **av)
@@ -56,11 +64,10 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		obj_map.map = ft_map_init(av[1], &obj_map);
+		if (!obj_map.map)
+			return (0);
 		ft_map_checker(&obj_map);
-		obj_game.move_num = 0;
-		obj_game.obj_map = &obj_map;
-		obj_game.obj_img = &obj_img;
-		obj_game.mlx_ptr = mlx_init();
+		ft_init_obj_game(&obj_game, &obj_map, &obj_img);
 		h = obj_map.map_height * 50;
 		w = obj_map.map_width * 50;
 		obj_game.win_ptr = mlx_new_window(obj_game.mlx_ptr, w, h, "Solo man");
@@ -71,5 +78,5 @@ int	main(int ac, char **av)
 		mlx_loop(obj_game.mlx_ptr);
 	}
 	else
-		ft_printf("Please enter : ./so_long [code/maps/mapx.ber]\n");
+		ft_printf("==> Please enter : ./so_long [code/maps/map_name.ber]\n");
 }

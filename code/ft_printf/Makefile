@@ -6,11 +6,11 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/27 14:29:53 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/15 16:04:26 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/23 15:49:05 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = ft_printf.a
 
 SRC = ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putstr.c ft_putnbr_base2.c ft_putnbr.c
 

@@ -6,59 +6,62 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/20 13:14:07 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/23 15:59:54 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC_FOLDER = ./code/
-FT_PRINTF_FOLDER = ./code/ft_printf
-GET_NEXT_LINE_FOLDER = ./code/get_next_line
-LIBFT_FOLDER = ./code/libft
-
 SRC = so_long.c map.c map_check.c move.c draw.c
-
 SRCS = $(addprefix $(SRC_FOLDER), $(SRC))
-
 SRCOBJ = ${SRCS:.c=.o}
 
-OTHER_FOLDER = ./code/**/
-OTHERS = *.c
-OTHEROBJ = $(addprefix $(OTHER_FOLDER), $(OTHERS))
+FT_PRINTF_FOLDER = ./code/ft_printf/
+FT_PRINTF_FILES = ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putstr.c ft_putnbr_base2.c ft_putnbr.c
+SRCS_FT_PRINTF = $(addprefix $(FT_PRINTF_FOLDER), $(FT_PRINTF_FILES))
 
-PRINTF  = ./code/printf.a
-GET_NEXT_LINE = ./code/get_next_line.a
-LIBFT = ./code/libft.a
+GET_NEXT_LINE_FOLDER = ./code/get_next_line/
+GET_NEXT_LINE_FILES = get_next_line.c get_next_line_utils.c
+SRCS_GET_NEXT_LINE = $(addprefix $(GET_NEXT_LINE_FOLDER), $(GET_NEXT_LINE_FILES))
 
+LIBFT_FOLDER = ./code/libft/
+LIBFT_FILES =	ft_isdigit.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_isprint.c\
+					ft_putchar_fd.c ft_strlcat.c ft_substr.c ft_itoa.c ft_atoi.c ft_putendl_fd.c\
+					ft_strlcpy.c ft_tolower.c ft_bzero.c  ft_putnbr_fd.c ft_strlen.c\
+					ft_toupper.c ft_calloc.c ft_memchr.c ft_putstr_fd.c ft_strmapi.c ft_isalnum.c\
+					ft_memcmp.c ft_split.c ft_strncmp.c ft_isalpha.c ft_memcpy.c ft_strchr.c\
+					ft_strnstr.c ft_isascii.c ft_memmove.c ft_strdup.c ft_strrchr.c ft_striteri.c
+SRCS_LIBFT = $(addprefix $(LIBFT_FOLDER), $(LIBFT_FILES))
 
-INCLUDE1 = ./code/so_long.h
-INCLUDE2 = ./code/ft_printf/ft_printf.h  
-INCLUDE3 = ./code/get_next_line/get_next_line.h 
-INCLUDE4 = ./code/libft/libft.h 
+OTHER_SRCS = $(SRCS_FT_PRINTF) $(SRCS_GET_NEXT_LINE) $(SRCS_LIBFT)
+OTHER_OBJ = ${OTHER_SRCS:.c=.o}
 
-CC = cc 
+LIBS = ./code/ft_printf.a ./code/get_next_line.a ./code/libft.a
+
+INCLUDES = ./code/so_long.h ./code/ft_printf/ft_printf.h ./code/get_next_line/get_next_line.h ./code/libft/libft.h 
 
 # -g for the debugger
 FLAGS = -Wall -Wextra -Werror 
+CC = cc 
 
-%.o : %.c ${INCLUDE1} ${INCLUDE2} ${INCLUDE3} ${INCLUDE4}
+%.o : %.c ${INCLUDES}
 	$(CC) ${FLAGS} -Imlx -c $< -o $@
 	
-$(NAME) : ${SRCOBJ} $(OTHEROBJ)
+$(NAME) : ${SRCOBJ} $(OTHER_SRCS)
 	@$(MAKE) -C $(FT_PRINTF_FOLDER)
 	@$(MAKE) -C $(GET_NEXT_LINE_FOLDER)
 	@$(MAKE) -C $(LIBFT_FOLDER)
-	@echo "make the so_long program"
-	@echo "make the printf.a" 
+	@echo "make the ft_printf.a" 
 	@echo "make the get_next_line.a"
 	@echo "make the libft.a"
-	@$(CC) $(SRCOBJ) $(PRINTF) $(GET_NEXT_LINE) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "make the so_long program"
+	@$(CC) $(SRCOBJ) $(LIBS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 all : $(NAME)  
 
 clean :
-	@rm -f ./code/*.a ./code/*.o ./code/ft_printf/*.o ./code/get_next_line/*.o ./code/libft/*.o
+	@rm -f $(LIBS) $(OTHER_OBJ) $(SRCOBJ)
 
 fclean : clean
 	@rm -f ${NAME} so_long

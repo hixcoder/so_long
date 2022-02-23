@@ -6,23 +6,25 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 04:12:54 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/21 15:13:13 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/22 13:28:52 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_map_errors(int error_num)
+void	ft_map_errors(t_map *obj_map, int error_num)
 {
-	printf("==> Error: ");
+	ft_printf("==> Error: ");
 	if (error_num == 0)
-		printf("your map is not rectanglar.\n");
+		ft_printf("your map is not rectanglar.\n");
 	else if (error_num == 1)
-		printf("The map must contain only these 5 chars: [0, 1, C, E, P].\n");
+		ft_printf("The map must contain only the 5 chars: [0, 1, C, E, P].\n");
 	else if (error_num == 2)
-		printf("The map must contain at least one [E & C] and only one P.\n");
+		ft_printf("The map must contain at least one [E & C] and only 1 P.\n");
 	else if (error_num == 3)
-		printf("The map must be surrounded by walls [1].\n");
+		ft_printf("The map must be surrounded by walls [1].\n");
+	free(obj_map->map);
+	obj_map->map = NULL;
 	exit(0);
 }
 
@@ -45,7 +47,7 @@ void	ft_check_walls(t_map *obj_map)
 		{
 			if (map[0][j] != '1' || map[rows][j] != '1'
 			|| map[i][0] != '1' || map[i][colums] != '1')
-				ft_map_errors(3);
+				ft_map_errors(obj_map, 3);
 		}
 	}
 }
@@ -60,7 +62,7 @@ void	ft_check_is_rectangle(t_map *obj_map)
 	while (map[++i])
 	{
 		if (((int)ft_strlen(map[i]) - 1) != obj_map->map_width)
-			ft_map_errors(0);
+			ft_map_errors(obj_map, 0);
 	}
 }
 
@@ -102,12 +104,12 @@ void	ft_map_checker(t_map *obj_map)
 		{
 			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C'
 			&& map[i][j] != 'E' && map[i][j] != 'P' && map[i][j] != '\n')
-				ft_map_errors(1);
+				ft_map_errors(obj_map, 1);
 			ft_map_chars_num(obj_map, map[i][j], i, j);
 		}
 	}
 	if (obj_map->exit_num <= 0 || obj_map->coin_num <= 0
 		|| (obj_map->plyr_num != 1))
-		ft_map_errors(2);
+		ft_map_errors(obj_map, 2);
 	ft_check_walls(obj_map);
 }

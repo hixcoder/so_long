@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:58:25 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/21 15:42:26 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:01:23 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,20 @@ void	ft_check_map_type(char *map_path)
 {
 	int		map_path_ending;
 	char	*ending;
+	char	*valid_path;
 
 	map_path_ending = ft_strlen(map_path) - 4;
 	ending = ".ber";
+	valid_path = "code/maps/";
 	if (ft_strncmp(ending, &map_path[map_path_ending], 4) != 0)
 	{
-		printf("==> Error: The map must end with the [.ber] extension.\n");
+		ft_printf("==> Error: The map must end with the [.ber] extension.\n");
+		exit(0);
+	}
+	else if (ft_strncmp(valid_path, map_path, 10) != 0)
+	{
+		ft_printf("==> Error: Invalid Path.\n");
+		ft_printf("==> Please enter : ./so_long [code/maps/map_name.ber]\n");
 		exit(0);
 	}
 }
@@ -42,6 +50,7 @@ void	ft_map_dimensions(char *map_path, t_map *obj_map)
 	{
 		if (i == 0)
 			obj_map->map_width = ft_strlen(line) - 1;
+		free(line);
 		line = get_next_line(fd);
 		i++;
 	}
@@ -70,6 +79,9 @@ char	**ft_map_init(char *map_path, t_map *obj_map)
 	while (line)
 	{
 		map[i] = ft_strdup(line);
+		if (!map[i])
+			return (NULL);
+		free(line);
 		line = get_next_line(fd);
 		i++;
 	}

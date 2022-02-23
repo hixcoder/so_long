@@ -6,7 +6,7 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 13:41:31 by hboumahd          #+#    #+#              #
-#    Updated: 2022/02/16 19:10:36 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/02/23 14:59:32 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,7 @@ SRCS =	ft_isdigit.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_isprint.c\
 		ft_memcmp.c ft_split.c ft_strncmp.c ft_isalpha.c ft_memcpy.c ft_strchr.c\
 		ft_strnstr.c ft_isascii.c ft_memmove.c ft_strdup.c ft_strrchr.c ft_striteri.c
 
-BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstdelone.c ft_lstlast.c\
-		ft_lstnew.c ft_lstsize.c ft_lstclear.c ft_lstiter.c
-
 OBJSRC = ${SRCS:.c=.o}
-
-OBJBONUS = ${BONUS:.c=.o}
 
 CC = cc
 
@@ -39,9 +34,6 @@ $(NAME): ${OBJSRC}
 	@ar rcs ${NAME} ${OBJSRC}
 	@mv ${NAME} ..
 
-bonus : ${OBJBONUS} ${OBJSRC} ${Include}
-	ar rcs ${NAME} ${OBJSRC} ${OBJBONUS}
-
 all: ${NAME}
 
 clean:
@@ -51,6 +43,3 @@ fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
-
-rm:
-	@rm -f *.o

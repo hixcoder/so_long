@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:58:25 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/17 12:34:53 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:15:31 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_check_map_type(char *map_path)
 {
@@ -29,7 +29,7 @@ void	ft_check_map_type(char *map_path)
 	else if (ft_strncmp(valid_path, map_path, 10) != 0)
 	{
 		ft_printf("==> Error: Invalid Path.\n");
-		ft_printf("==> Please enter : ./so_long [assets/maps/map_name.ber]\n");
+		ft_printf("==> Enter : ./so_long_bonus [assets/maps/map_name.ber]\n");
 		exit(0);
 	}
 }

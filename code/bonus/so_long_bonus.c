@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/17 12:34:22 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:17:39 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	ft_exit_handler(void *obj_gam)
 {
@@ -78,5 +78,5 @@ int	main(int ac, char **av)
 		mlx_loop(obj_game.mlx_ptr);
 	}
 	else
-		ft_printf("==> Please enter : ./so_long [assets/maps/map_name.ber]\n");
+		ft_printf("==> Enter : ./so_long_bonus [assets/maps/map_name.ber]\n");
 }

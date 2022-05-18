@@ -6,21 +6,30 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 00:42:59 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/16 13:14:16 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:32:59 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	ft_check_exit(t_game *obj_game)
+void	ft_check_exit(t_game *obj_game, char c)
 {
-	if (obj_game->obj_map->coin_num == 0)
+	if (obj_game->obj_map->coin_num == 0 && c == 'E')
 	{
 		ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
 		free(obj_game->obj_map->map);
 		obj_game->obj_map->map = NULL;
 		mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
 		ft_printf("\n      ==> *_* { Game End } *_* <==\n");
+		exit(0);
+	}
+	else if (c == 'B')
+	{
+		ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
+		free(obj_game->obj_map->map);
+		obj_game->obj_map->map = NULL;
+		mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
+		ft_printf("\n      ==> *_* { You Lost } *_* <==\n");
 		exit(0);
 	}
 	else
@@ -40,8 +49,8 @@ void	ft_move_up(t_game *obj_game)
 	{
 		if (map[y - 1][x] == 'C')
 			obj_game->obj_map->coin_num--;
-		if (map[y - 1][x] == 'E')
-			ft_check_exit(obj_game);
+		if (map[y - 1][x] == 'E' || map[y - 1][x] == 'B')
+			ft_check_exit(obj_game, map[y - 1][x]);
 		else
 		{
 			map[y][x] = '0';
@@ -66,8 +75,8 @@ void	ft_move_down(t_game *obj_game)
 	{
 		if (map[y + 1][x] == 'C')
 			obj_game->obj_map->coin_num--;
-		if (map[y + 1][x] == 'E')
-			ft_check_exit(obj_game);
+		if (map[y + 1][x] == 'E' || map[y + 1][x] == 'B')
+			ft_check_exit(obj_game, map[y + 1][x]);
 		else
 		{
 			map[y][x] = '0';
@@ -92,8 +101,8 @@ void	ft_move_right(t_game *obj_game)
 	{
 		if (map[y][x + 1] == 'C')
 			obj_game->obj_map->coin_num--;
-		if (map[y][x + 1] == 'E')
-			ft_check_exit(obj_game);
+		if (map[y][x + 1] == 'E' || map[y][x + 1] == 'B')
+			ft_check_exit(obj_game, map[y][x + 1]);
 		else
 		{
 			map[y][x] = '0';
@@ -118,8 +127,8 @@ void	ft_move_left(t_game *obj_game)
 	{
 		if (map[y][x - 1] == 'C')
 			obj_game->obj_map->coin_num--;
-		if (map[y][x - 1] == 'E')
-			ft_check_exit(obj_game);
+		if (map[y][x - 1] == 'E' || map[y][x - 1] == 'B')
+			ft_check_exit(obj_game, map[y][x - 1]);
 		else
 		{
 			map[y][x] = '0';

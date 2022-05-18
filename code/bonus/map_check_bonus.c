@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 04:12:54 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/16 13:14:18 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:26:17 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_map_errors(t_map *obj_map, int error_num)
 	if (error_num == 0)
 		ft_printf("your map is not rectanglar.\n");
 	else if (error_num == 1)
-		ft_printf("The map must contain only the 5 chars: [0, 1, C, E, P].\n");
+		ft_printf("The map must have only the 6 chars: [0, 1, C, E, P, B].\n");
 	else if (error_num == 2)
 		ft_printf("The map must contain at least one [E & C] and only 1 P.\n");
 	else if (error_num == 3)
@@ -108,7 +108,7 @@ void	ft_map_checker(t_map *obj_map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C'
+			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C' && map[i][j] != 'B'
 			&& map[i][j] != 'E' && map[i][j] != 'P' && map[i][j] != '\n')
 				ft_map_errors(obj_map, 1);
 			ft_map_chars_num(obj_map, map[i][j], i, j);

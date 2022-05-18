@@ -6,7 +6,7 @@
 #    By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:20:29 by hboumahd          #+#    #+#              #
-#    Updated: 2022/05/17 12:31:04 by hboumahd         ###   ########.fr        #
+#    Updated: 2022/05/18 11:49:28 by hboumahd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCOBJ = ${SRCS:.c=.o}
 
 # bonus
 SRC_FOLDER_B = ./code/bonus/
-SRC_B = draw_bonus.c map_bonus.c map_check_bonus.c move_bonus.c so_long_bonus.c 
+SRC_B = draw_bonus.c map_bonus.c map_check_bonus.c move_bonus.c so_long_bonus.c animate_bonus.c 
 SRCS_B = $(addprefix $(SRC_FOLDER_B), $(SRC_B))
 SRCOBJ_B = ${SRCS_B:.c=.o}
 

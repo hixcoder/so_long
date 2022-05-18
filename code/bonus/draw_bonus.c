@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 20:53:04 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/18 12:53:59 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/18 21:37:08 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_drawer_init(t_game *obj_game, t_img *obj_img)
 	obj_img->img_coin = mlx_xpm_file_to_image(p, "./assets/coin.xpm", &s, &s);
 	obj_img->img_player = mlx_xpm_file_to_image(p, "./assets/plyr.xpm", &s, &s);
 	obj_img->img_dor = mlx_xpm_file_to_image(p, "./assets/dors.xpm", &s, &s);
-	obj_img->img_boss = mlx_xpm_file_to_image(p, "./assets/boss_0.xpm", &s, &s);
+	obj_img->img_boss = mlx_xpm_file_to_image(p, "./assets/boss_1.xpm", &s, &s);
 }
 
 void	ft_put_image(t_game *obj_game, void	*img, int i, int j)

@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/17 12:34:22 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:29:03 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 int	ft_exit_handler(void *obj_gam)
 {
 	t_game	*obj_game;
+	int		i;
 
 	obj_game = obj_gam;
+	i = -1;
+	while (obj_game->obj_map->map[++i] != NULL)
+	{
+		free(obj_game->obj_map->map[i]);
+		obj_game->obj_map->map[i] = NULL;
+	}
 	free(obj_game->obj_map->map);
 	obj_game->obj_map->map = NULL;
 	mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);

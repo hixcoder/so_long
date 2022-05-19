@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 04:12:54 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/16 13:06:00 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:36:06 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_map_errors(t_map *obj_map, int error_num)
 {
+	int	i;
+
 	ft_printf("==> Error: ");
 	if (error_num == 0)
 		ft_printf("your map is not rectanglar.\n");
@@ -23,6 +25,12 @@ void	ft_map_errors(t_map *obj_map, int error_num)
 		ft_printf("The map must contain at least one [E & C] and only 1 P.\n");
 	else if (error_num == 3)
 		ft_printf("The map must be surrounded by walls [1].\n");
+	i = -1;
+	while (obj_map->map[++i] != NULL)
+	{
+		free(obj_map->map[i]);
+		obj_map->map[i] = NULL;
+	}
 	free(obj_map->map);
 	obj_map->map = NULL;
 	exit(0);

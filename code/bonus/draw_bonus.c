@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 20:53:04 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/19 12:27:35 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:47:49 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,17 @@ void	ft_put_image(t_game *obj_game, void	*img, int i, int j)
 void	ft_moves_nbr(t_map *obj_map, t_game *obj_game)
 {
 	char	*text;
+	char	*nbr;
 	int		x;
 	int		y;
 
 	x = obj_map->map_width / 2;
 	y = obj_map->map_height;
-	text = ft_strjoin("Number of moves : ", ft_itoa(obj_game->move_num));
+	nbr = ft_itoa(obj_game->move_num);
+	text = ft_strjoin("Number of moves : ", nbr);
+	free(nbr);
 	mlx_string_put(obj_game->mlx_ptr, obj_game->win_ptr, x, y, 0xABCDEF, text);
+	free(text);
 }
 
 void	ft_put_images(t_game *obj_game, int i, int j)

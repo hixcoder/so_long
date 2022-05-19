@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 00:42:59 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/02/22 13:30:37 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:37:10 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,16 @@
 
 void	ft_check_exit(t_game *obj_game)
 {
+	int	i;
+
 	if (obj_game->obj_map->coin_num == 0)
 	{
+		i = -1;
+		while (obj_game->obj_map->map[++i] != NULL)
+		{
+			free(obj_game->obj_map->map[i]);
+			obj_game->obj_map->map[i] = NULL;
+		}
 		ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
 		free(obj_game->obj_map->map);
 		obj_game->obj_map->map = NULL;
@@ -48,7 +56,7 @@ void	ft_move_up(t_game *obj_game)
 			map[y - 1][x] = 'P';
 			obj_game->obj_map->plyr_y--;
 			obj_game->move_num++;
-			ft_printf("==> Number of movements : %d\n", obj_game->move_num);
+			ft_printf("==>  movements : %d\n", obj_game->move_num);
 		}
 	}
 }

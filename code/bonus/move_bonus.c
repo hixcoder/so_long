@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 00:42:59 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/19 11:49:38 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:34:46 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 void	ft_check_exit(t_game *obj_game, char c)
 {
-	if (obj_game->obj_map->coin_num == 0 && c == 'E')
+	int	i;
+
+	if ((obj_game->obj_map->coin_num == 0 && c == 'E') || c == 'B')
 	{
 		ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
+		i = -1;
+		while (obj_game->obj_map->map[++i] != NULL)
+		{
+			free(obj_game->obj_map->map[i]);
+			obj_game->obj_map->map[i] = NULL;
+		}
 		free(obj_game->obj_map->map);
 		obj_game->obj_map->map = NULL;
 		mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
-		ft_printf("\n      ==> *_* { Game End } *_* <==\n");
-		exit(0);
-	}
-	else if (c == 'B')
-	{
-		ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
-		free(obj_game->obj_map->map);
-		obj_game->obj_map->map = NULL;
-		mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);
-		ft_printf("\n      ==> *_* { You Lost } *_* <==\n");
+		if (obj_game->obj_map->coin_num == 0 && c == 'E')
+			ft_printf("\n      ==> *_* { Game End } *_* <==\n");
+		else if (c == 'B')
+			ft_printf("\n      ==> *_* { You Lost } *_* <==\n");
 		exit(0);
 	}
 	else

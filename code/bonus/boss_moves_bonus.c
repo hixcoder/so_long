@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:45:35 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/19 12:04:42 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:30:16 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 void	ft_check_exit2(t_game *obj_game, char c)
 {
+	int	i;
+
 	if (c == 'P')
 	{
 		ft_game_drawer(obj_game->obj_map, obj_game, obj_game->obj_img);
+		i = -1;
+		while (obj_game->obj_map->map[++i] != NULL)
+		{
+			free(obj_game->obj_map->map[i]);
+			obj_game->obj_map->map[i] = NULL;
+		}
 		free(obj_game->obj_map->map);
 		obj_game->obj_map->map = NULL;
 		mlx_destroy_window(obj_game->mlx_ptr, obj_game->win_ptr);

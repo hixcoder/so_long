@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 20:53:04 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/18 21:37:08 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:27:35 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,43 +39,50 @@ void	ft_put_image(t_game *obj_game, void	*img, int i, int j)
 
 void	ft_moves_nbr(t_map *obj_map, t_game *obj_game)
 {
-	char *text;
-	int x;
-	int y;
-	
+	char	*text;
+	int		x;
+	int		y;
+
 	x = obj_map->map_width / 2;
 	y = obj_map->map_height;
-	text = ft_strjoin("Number of moves : ",ft_itoa(obj_game->move_num));
-	mlx_string_put(obj_game->mlx_ptr,obj_game->win_ptr,x,y,0xABCDEF,text);
+	text = ft_strjoin("Number of moves : ", ft_itoa(obj_game->move_num));
+	mlx_string_put(obj_game->mlx_ptr, obj_game->win_ptr, x, y, 0xABCDEF, text);
+}
+
+void	ft_put_images(t_game *obj_game, int i, int j)
+{
+	t_map	*obj_map;
+	t_img	*obj_img;
+
+	obj_map = obj_game->obj_map;
+	obj_img = obj_game->obj_img;
+	ft_put_image(obj_game, obj_img->img_grass, i, j);
+	if (obj_map->map[i][j] == '1')
+		ft_put_image(obj_game, obj_img->img_wall, i, j);
+	else if (obj_map->map[i][j] == '0')
+		ft_put_image(obj_game, obj_img->img_grass, i, j);
+	else if (obj_map->map[i][j] == 'C')
+		ft_put_image(obj_game, obj_img->img_coin, i, j);
+	else if (obj_map->map[i][j] == 'P')
+		ft_put_image(obj_game, obj_img->img_player, i, j);
+	else if (obj_map->map[i][j] == 'E')
+		ft_put_image(obj_game, obj_img->img_dor, i, j);
+	else if (obj_map->map[i][j] == 'B')
+		ft_put_image(obj_game, obj_img->img_boss, i, j);
 }
 
 void	ft_game_drawer(t_map *obj_map, t_game *obj_game, t_img *obj_img)
 {
 	int		i;
 	int		j;
-	char	**map;
 
-	map = obj_map->map;
 	i = -1;
+	(void) obj_img;
 	while (++i < obj_map->map_height)
 	{
 		j = -1;
 		while (++j < obj_map->map_width)
-		{
-			ft_put_image(obj_game, obj_img->img_grass, i, j);
-			if (obj_map->map[i][j] == '1')
-				ft_put_image(obj_game, obj_img->img_wall, i, j);
-			else if (obj_map->map[i][j] == '0')
-				ft_put_image(obj_game, obj_img->img_grass, i, j);
-			else if (obj_map->map[i][j] == 'C')
-				ft_put_image(obj_game, obj_img->img_coin, i, j);
-			else if (obj_map->map[i][j] == 'P')
-				ft_put_image(obj_game, obj_img->img_player, i, j);
-			else if (obj_map->map[i][j] == 'E')
-				ft_put_image(obj_game, obj_img->img_dor, i, j);
-			else if (obj_map->map[i][j] == 'B')
-				ft_put_image(obj_game, obj_img->img_boss, i, j);
-		}
+			ft_put_images(obj_game, i, j);
 	}
 	ft_moves_nbr(obj_map, obj_game);
 }

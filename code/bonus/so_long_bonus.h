@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:26:38 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/18 11:51:46 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:54:15 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_map
 	int		plyr_num;
 	int		plyr_x;
 	int		plyr_y;
+	int		boss_x;
+	int		boss_y;
 }	t_map;
 
 typedef struct s_img
@@ -70,5 +72,11 @@ void	ft_move_left(t_game *obj_game);
 void	ft_drawer_init(t_game *obj_game, t_img *obj_img);
 void	ft_game_drawer(t_map *obj_map, t_game *obj_game, t_img *obj_img);
 int		ft_animate(void *obj_gam);
+void	ft_check_exit2(t_game *obj_game, char c);
+
+void	ft_boss_up(t_game *obj_game, char **map, int x, int y);
+void	ft_boss_down(t_game *obj_game, char **map, int x, int y);
+void	ft_boss_right(t_game *obj_game, char **map, int x, int y);
+void	ft_boss_left(t_game *obj_game, char **map, int x, int y);
 
 #endif

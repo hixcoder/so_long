@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Wed May 18 20:57:52 2022
+# Make data base, printed on Thu May 19 11:57:54 2022
 
 # Variables
 
@@ -50,13 +51,14 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 14)
 BONUS = so_long_bonus
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cdf80033bk/T/vscode-ipc-5ce916a4-a728-4af6-92b7-3e43d83ffe49.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cdf80033bk/T/vscode-ipc-fda60692-939d-43aa-a815-ad3e6f64afac.sock
 # environment
 VSCODE_CWD = /
 # makefile (from `Makefile', line 35)
 SRCS_GET_NEXT_LINE = $(addprefix $(GET_NEXT_LINE_FOLDER), $(GET_NEXT_LINE_FILES))
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.hYSiWMJJM5/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.906kiV9ucp/Render
+ 
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/hboumahd/goinfre/devtools/Android/sdk/tools/bin:/Users/hboumahd/goinfre/devtools/Android/sdk/emulator:/Users/hboumahd/goinfre/devtools/flutter/bin:/Users/hboumahd/goinfre/devtools/gradle/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/hboumahd/goinfre/devtools/jdk/Contents/Home/bin
 # environment
@@ -68,13 +70,13 @@ SRCOBJ = ${SRCS:.c=.o}
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.dOlSJYWhTM/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.JwNGW2s4Zq/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 33)
 GET_NEXT_LINE_FOLDER = ./code/get_next_line/
 # makefile (from `Makefile', line 24)
-SRC_B = draw_bonus.c map_bonus.c map_check_bonus.c move_bonus.c so_long_bonus.c animate_bonus.c 
+SRC_B = draw_bonus.c map_bonus.c map_check_bonus.c move_bonus.c so_long_bonus.c animate_bonus.c boss_moves_bonus.c
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -154,15 +156,13 @@ MFLAGS = -Rrqp
 # makefile (from `Makefile', line 34)
 GET_NEXT_LINE_FILES = get_next_line.c get_next_line_utils.c
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000004.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.1260
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x18D72:0:0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -175,8 +175,6 @@ ANDROID_SDK_ROOT = /Users/hboumahd/goinfre/devtools/Android/sdk
 LC_ALL = C
 # makefile (from `Makefile', line 49)
 LIBS = ./code/ft_printf.a ./code/get_next_line.a ./code/libft.a
-# environment
-SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -200,9 +198,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2148
+VSCODE_PID = 6474
 # variable set hash-table stats:
-# Load=95/1024=9%, Rehash=0, Collisions=6/156=4%
+# Load=93/1024=9%, Rehash=0, Collisions=6/154=4%
 
 # Pattern-specific Variable Values
 
@@ -210,14 +208,14 @@ VSCODE_PID = 2148
 
 # Directories
 
-# code/bonus (device 16777227, inode 2750778): 10 files, no impossibilities so far.
+# code/bonus (device 16777227, inode 2750778): 11 files, no impossibilities so far.
 # . (device 16777227, inode 2749888): 9 files, no impossibilities.
 # code/libft (device 16777227, inode 2749974): 37 files, no impossibilities so far.
 # code/get_next_line (device 16777227, inode 2749969): 4 files, no impossibilities so far.
 # code (device 16777227, inode 2749957): 13 files, no impossibilities so far.
 # code/ft_printf (device 16777227, inode 2749960): 4 files, no impossibilities so far.
 
-# 77 files, no impossibilities in 6 directories.
+# 78 files, no impossibilities in 6 directories.
 
 # Implicit Rules
 
@@ -238,9 +236,9 @@ code/libft/ft_memmove.c:
 
 # Not a target:
 code/libft/ft_strchr.c:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -366,7 +364,7 @@ code/libft/ft_strmapi.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-18 11:49:28
+#  Last modified 2022-05-19 11:57:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -534,7 +532,7 @@ code/so_long.h:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
  
-so_long_bonus: code/bonus/draw_bonus.o code/bonus/map_bonus.o code/bonus/map_check_bonus.o code/bonus/move_bonus.o code/bonus/so_long_bonus.o code/bonus/animate_bonus.o code/ft_printf/ft_printf.c code/ft_printf/ft_putchar.c code/ft_printf/ft_putnbr_base.c code/ft_printf/ft_putstr.c code/ft_printf/ft_putnbr_base2.c code/ft_printf/ft_putnbr.c code/get_next_line/get_next_line.c code/get_next_line/get_next_line_utils.c code/libft/ft_isdigit.c code/libft/ft_memset.c code/libft/ft_strjoin.c code/libft/ft_strtrim.c code/libft/ft_isprint.c code/libft/ft_putchar_fd.c code/libft/ft_strlcat.c code/libft/ft_substr.c code/libft/ft_itoa.c code/libft/ft_atoi.c code/libft/ft_putendl_fd.c code/libft/ft_strlcpy.c code/libft/ft_tolower.c code/libft/ft_bzero.c code/libft/ft_putnbr_fd.c code/libft/ft_strlen.c code/libft/ft_toupper.c code/libft/ft_calloc.c code/libft/ft_memchr.c code/libft/ft_putstr_fd.c code/libft/ft_strmapi.c code/libft/ft_isalnum.c code/libft/ft_memcmp.c code/libft/ft_split.c code/libft/ft_strncmp.c code/libft/ft_isalpha.c code/libft/ft_memcpy.c code/libft/ft_strchr.c code/libft/ft_strnstr.c code/libft/ft_isascii.c code/libft/ft_memmove.c code/libft/ft_strdup.c code/libft/ft_strrchr.c code/libft/ft_striteri.c
+so_long_bonus: code/bonus/draw_bonus.o code/bonus/map_bonus.o code/bonus/map_check_bonus.o code/bonus/move_bonus.o code/bonus/so_long_bonus.o code/bonus/animate_bonus.o code/bonus/boss_moves_bonus.o code/ft_printf/ft_printf.c code/ft_printf/ft_putchar.c code/ft_printf/ft_putnbr_base.c code/ft_printf/ft_putstr.c code/ft_printf/ft_putnbr_base2.c code/ft_printf/ft_putnbr.c code/get_next_line/get_next_line.c code/get_next_line/get_next_line_utils.c code/libft/ft_isdigit.c code/libft/ft_memset.c code/libft/ft_strjoin.c code/libft/ft_strtrim.c code/libft/ft_isprint.c code/libft/ft_putchar_fd.c code/libft/ft_strlcat.c code/libft/ft_substr.c code/libft/ft_itoa.c code/libft/ft_atoi.c code/libft/ft_putendl_fd.c code/libft/ft_strlcpy.c code/libft/ft_tolower.c code/libft/ft_bzero.c code/libft/ft_putnbr_fd.c code/libft/ft_strlen.c code/libft/ft_toupper.c code/libft/ft_calloc.c code/libft/ft_memchr.c code/libft/ft_putstr_fd.c code/libft/ft_strmapi.c code/libft/ft_isalnum.c code/libft/ft_memcmp.c code/libft/ft_split.c code/libft/ft_strncmp.c code/libft/ft_isalpha.c code/libft/ft_memcpy.c code/libft/ft_strchr.c code/libft/ft_strnstr.c code/libft/ft_isascii.c code/libft/ft_memmove.c code/libft/ft_strdup.c code/libft/ft_strrchr.c code/libft/ft_striteri.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -548,6 +546,12 @@ so_long_bonus: code/bonus/draw_bonus.o code/bonus/map_bonus.o code/bonus/map_che
 	@echo "make the so_long_bonus program"
 	@$(CC) ${FLAGS} $(SRCOBJ_B) $(LIBS) -lmlx -framework OpenGL -framework AppKit -o $(BONUS)
 	
+
+# Not a target:
+code/bonus/boss_moves_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 code/move.o:
@@ -661,7 +665,7 @@ code/libft/ft_isalpha.c:
 # Not a target:
 code/bonus/so_long_bonus.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-18 11:51:46
+#  Last modified 2022-05-19 11:54:15
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -716,7 +720,7 @@ code/libft/ft_strdup.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=12/195=6%
+# Load=70/1024=7%, Rehash=0, Collisions=12/197=6%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -728,6 +732,6 @@ code/libft/ft_strdup.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed May 18 20:57:52 2022
+# Finished Make data base on Thu May 19 11:57:54 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:18 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/18 21:28:20 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:35:15 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_key_handler(int key, void *obj_gam)
 {
 	t_game	*obj_game;
 	char	**map;
-	
+
 	obj_game = (t_game *) obj_gam;
 	map = obj_game->obj_map->map;
 	mlx_clear_window(obj_game->mlx_ptr, obj_game->win_ptr);
@@ -77,7 +77,7 @@ int	main(int ac, char **av)
 		mlx_hook(obj_game.win_ptr, 02, 0, ft_key_handler, &obj_game);
 		mlx_hook(obj_game.win_ptr, 17, 0, ft_exit_handler, &obj_game);
 		mlx_loop_hook(obj_game.mlx_ptr, ft_animate, &obj_game);
-	    mlx_loop(obj_game.mlx_ptr);
+		mlx_loop(obj_game.mlx_ptr);
 	}
 	else
 		ft_printf("==> Enter : ./so_long_bonus [assets/maps/map_name.ber]\n");

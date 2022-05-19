@@ -6,7 +6,7 @@
 /*   By: hboumahd <hboumahd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 04:12:54 by hboumahd          #+#    #+#             */
-/*   Updated: 2022/05/18 11:26:17 by hboumahd         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:34:50 by hboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ void	ft_check_is_rectangle(t_map *obj_map)
 	int		width;
 	int		height;
 
+	obj_map->exit_num = 0;
+	obj_map->coin_num = 0;
+	obj_map->plyr_num = 0;
 	width = obj_map->map_width;
 	height = obj_map->map_height - 1;
 	map = obj_map->map;
@@ -85,7 +88,12 @@ void	ft_map_chars_num(t_map *obj_map, char map_c, int i, int j)
 		obj_map->plyr_num++;
 		obj_map->plyr_x = j;
 		obj_map->plyr_y = i;
-	}	
+	}
+	else if (map_c == 'B')
+	{
+		obj_map->boss_x = j;
+		obj_map->boss_y = i;
+	}
 }
 
 /*
@@ -100,15 +108,13 @@ void	ft_map_checker(t_map *obj_map)
 	ft_check_is_rectangle(obj_map);
 	map = obj_map->map;
 	i = -1;
-	obj_map->exit_num = 0;
-	obj_map->coin_num = 0;
-	obj_map->plyr_num = 0;
 	while (map[++i])
 	{
 		j = -1;
 		while (map[i][++j])
 		{
-			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C' && map[i][j] != 'B'
+			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C'
+			&& map[i][j] != 'B'
 			&& map[i][j] != 'E' && map[i][j] != 'P' && map[i][j] != '\n')
 				ft_map_errors(obj_map, 1);
 			ft_map_chars_num(obj_map, map[i][j], i, j);
